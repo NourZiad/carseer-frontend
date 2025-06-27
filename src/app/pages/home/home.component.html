@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>Select a car</h2>
+  
+    <!-- Make -->
+    <label>Make</label>
+    <select [(ngModel)]="selectedMakeId" (change)="onMakeChange()">
+      <option *ngFor="let make of makes" [value]="make.make_ID">
+        {{ make.make_Name }}
+      </option>
+    </select>
+  
+    <!-- Year -->
+    <label>Year</label>
+    <input type="number" [(ngModel)]="selectedYear" (change)="onYearChange()"/>
+  
+    <!-- Vehicle Types -->
+    <h3 *ngIf="vehicleTypes?.length">Vehicle Types</h3>
+    <ul>
+      <li *ngFor="let t of vehicleTypes">{{ t.vehicleTypeName }}</li>
+    </ul>
+  
+    <!-- Models -->
+    <h3 *ngIf="models?.length">Models</h3>
+    <ul>
+      <li *ngFor="let m of models">{{ m.model_Name }}</li>
+    </ul>
+  </div>
+  
